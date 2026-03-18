@@ -49,4 +49,4 @@ Output: `target/MoneyTycoon-2.0.0.jar`
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+Private License. All rights reserved.
