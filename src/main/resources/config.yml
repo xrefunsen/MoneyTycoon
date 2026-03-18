@@ -1,0 +1,536 @@
+﻿
+performance:
+  tick-interval: 2
+  max-items-per-tycoon: 80
+  pet-teleport-interval: 40
+  ui-update-interval: 20
+  particles: true
+
+general:
+  world: "moneytycoon_world"
+  start-x: 0
+  start-z: 0
+  start-y: 100
+  plot-size: 35
+  plot-gap: 20
+  grid-width: 10
+  auto-save-interval: 5
+
+island-types:
+  COMPACT:
+    display-name: "&7Compact Island"
+    description: "&7Small 25x25 plot, efficient layout"
+    plot-size: 25
+    cost: 0
+    dropper-x: 12
+    dropper-z: 5
+    conv-start-z: 8
+    conv-end-z: 18
+    sell-z: 19
+    spawn-x: 12
+    spawn-z: 22
+    vip: false
+  DEFAULT:
+    display-name: "&aStandard Island"
+    description: "&7Classic 35x35 plot"
+    plot-size: 35
+    cost: 0
+    dropper-x: 17
+    dropper-z: 5
+    conv-start-z: 8
+    conv-end-z: 22
+    sell-z: 23
+    spawn-x: 17
+    spawn-z: 30
+    vip: false
+  LARGE:
+    display-name: "&6Large Island"
+    description: "&7Spacious 45x45 plot"
+    plot-size: 45
+    cost: 100000
+    dropper-x: 22
+    dropper-z: 5
+    conv-start-z: 8
+    conv-end-z: 32
+    sell-z: 33
+    spawn-x: 22
+    spawn-z: 40
+    vip: false
+  PREMIUM:
+    display-name: "&d&lVIP Premium Island"
+    description: "&7Huge 55x55 plot"
+    plot-size: 55
+    cost: 500000
+    dropper-x: 27
+    dropper-z: 5
+    conv-start-z: 8
+    conv-end-z: 42
+    sell-z: 43
+    spawn-x: 27
+    spawn-z: 50
+    vip: true
+
+database:
+  type: SQLITE
+  mysql:
+    host: localhost
+    port: 3306
+    database: moneytycoon
+    username: root
+    password: ""
+
+dropper:
+  base-interval: 40
+  speed-upgrade-reduction: 4
+  types:
+    COBBLESTONE:
+      display-name: "&7Stone Dropper"
+      value: 1.0
+      cost: 0
+      order: 1
+    IRON_INGOT:
+      display-name: "&fIron Dropper"
+      value: 5.0
+      cost: 2500
+      order: 2
+    GOLD_INGOT:
+      display-name: "&6Gold Dropper"
+      value: 25.0
+      cost: 15000
+      order: 3
+    DIAMOND:
+      display-name: "&bDiamond Dropper"
+      value: 100.0
+      cost: 75000
+      order: 4
+    EMERALD:
+      display-name: "&aEmerald Dropper"
+      value: 500.0
+      cost: 350000
+      order: 5
+    NETHERITE_INGOT:
+      display-name: "&4Netherite Dropper"
+      value: 2500.0
+      cost: 1500000
+      order: 6
+    DIAMOND_BLOCK:
+      display-name: "&b&lVIP Diamond Block"
+      value: 5000.0
+      cost: 5000000
+      order: 7
+      vip: true
+    NETHERITE_BLOCK:
+      display-name: "&4&lVIP Netherite Block"
+      value: 15000.0
+      cost: 25000000
+      order: 8
+      vip: true
+
+upgrades:
+  dropper-speed:
+    display-name: "&eDropper Speed"
+    max-level: 10
+    base-cost: 500
+    cost-multiplier: 2.5
+    description: "&7Increases dropper production speed"
+  value-multiplier:
+    display-name: "&6Value Multiplier"
+    max-level: 10
+    base-cost: 1000
+    cost-multiplier: 3.0
+    description: "&7Increases the value of produced items"
+  conveyor-speed:
+    display-name: "&cConveyor Speed"
+    max-level: 5
+    base-cost: 1500
+    cost-multiplier: 2.0
+    description: "&7Increases conveyor belt speed"
+  auto-collect:
+    display-name: "&aAuto Collect"
+    max-level: 1
+    base-cost: 50000
+    cost-multiplier: 1.0
+    description: "&7Sold money goes directly to your wallet"
+  extra-dropper:
+    display-name: "&dExtra Dropper"
+    max-level: 3
+    base-cost: 25000
+    cost-multiplier: 4.0
+    description: "&7Adds additional droppers (max 3)"
+  processor:
+    display-name: "&5Processor"
+    max-level: 5
+    base-cost: 40000
+    cost-multiplier: 3.0
+    description: "&7Processes items for +30% value per level"
+
+prestige:
+  enabled: true
+  multiplier-per-prestige: 0.5
+  base-cost: 500000
+  cost-multiplier: 3.0
+
+rebirth:
+  enabled: true
+  multiplier-per-rebirth: 1.0
+  base-cost: 50000000
+  cost-multiplier: 5.0
+  prestige-requirement: 10
+
+themes:
+  CLASSIC:
+    display-name: "&7Classic Factory"
+    cost: 0
+    floor: POLISHED_ANDESITE
+    wall: DEEPSLATE_BRICKS
+    pillar: IRON_BLOCK
+    conveyor: ORANGE_CONCRETE
+    conveyor-side: GRAY_CONCRETE
+    sell: GOLD_BLOCK
+    accent: SMOOTH_STONE
+    vip: false
+  MINE:
+    display-name: "&8Mine Shaft"
+    cost: 5000
+    floor: COBBLESTONE
+    wall: STONE_BRICKS
+    pillar: COAL_BLOCK
+    conveyor: BROWN_CONCRETE
+    conveyor-side: STONE
+    sell: DIAMOND_BLOCK
+    accent: ANDESITE
+    vip: false
+  FARM:
+    display-name: "&aFarmland"
+    cost: 10000
+    floor: GRASS_BLOCK
+    wall: OAK_LOG
+    pillar: HAY_BLOCK
+    conveyor: LIME_CONCRETE
+    conveyor-side: OAK_PLANKS
+    sell: EMERALD_BLOCK
+    accent: FARMLAND
+    vip: false
+  NETHER:
+    display-name: "&4Nether"
+    cost: 50000
+    floor: NETHER_BRICKS
+    wall: BLACKSTONE
+    pillar: MAGMA_BLOCK
+    conveyor: RED_CONCRETE
+    conveyor-side: NETHER_BRICKS
+    sell: GILDED_BLACKSTONE
+    accent: CRIMSON_PLANKS
+    vip: false
+  END:
+    display-name: "&5The End"
+    cost: 100000
+    floor: END_STONE_BRICKS
+    wall: PURPUR_BLOCK
+    pillar: OBSIDIAN
+    conveyor: PURPLE_CONCRETE
+    conveyor-side: PURPUR_SLAB
+    sell: END_STONE
+    accent: PURPUR_PILLAR
+    vip: false
+  ROYAL:
+    display-name: "&6&lVIP Royal"
+    cost: 0
+    floor: QUARTZ_BLOCK
+    wall: QUARTZ_BRICKS
+    pillar: GOLD_BLOCK
+    conveyor: YELLOW_CONCRETE
+    conveyor-side: QUARTZ_SLAB
+    sell: BEACON
+    accent: QUARTZ_PILLAR
+    vip: true
+
+pets:
+  COLLECTOR:
+    display-name: "&6Collector Cat"
+    description: "&7Auto-collects sold money"
+    cost: 15000
+    mob-type: CAT
+    bonus-type: AUTO_COLLECT
+    bonus-value: 1.0
+    vip: false
+  SPEED:
+    display-name: "&bSpeed Rabbit"
+    description: "&715% faster dropper"
+    cost: 20000
+    mob-type: RABBIT
+    bonus-type: DROPPER_SPEED
+    bonus-value: 0.15
+    vip: false
+  VALUE:
+    display-name: "&eValue Fox"
+    description: "&720% more item value"
+    cost: 25000
+    mob-type: FOX
+    bonus-type: VALUE_MULT
+    bonus-value: 0.20
+    vip: false
+  LUCKY:
+    display-name: "&aLucky Parrot"
+    description: "&710% double drop chance"
+    cost: 30000
+    mob-type: PARROT
+    bonus-type: DOUBLE_DROP
+    bonus-value: 0.10
+    vip: false
+  VIP_DRAGON:
+    display-name: "&d&lVIP Bee"
+    description: "&7All bonuses at 15%"
+    cost: 0
+    mob-type: BEE
+    bonus-type: ALL_BONUS
+    bonus-value: 0.15
+    vip: true
+
+boosters:
+  2x:
+    display-name: "&e2x Multiplier"
+    multiplier: 2.0
+    duration: 300
+    cost: 5000
+  3x:
+    display-name: "&63x Multiplier"
+    multiplier: 3.0
+    duration: 180
+    cost: 15000
+  5x:
+    display-name: "&c&l5x Multiplier"
+    multiplier: 5.0
+    duration: 60
+    cost: 50000
+
+milestones:
+  1000:
+    reward: 500
+    message: "&aâ­ Milestone: $1K earned! Reward: &e$500"
+  10000:
+    reward: 2000
+    message: "&aâ­ Milestone: $10K earned! Reward: &e$2,000"
+  100000:
+    reward: 10000
+    message: "&aâ­ Milestone: $100K earned! Reward: &e$10,000"
+  1000000:
+    reward: 50000
+    message: "&6â­ Milestone: $1M earned! Reward: &e$50,000"
+  10000000:
+    reward: 250000
+    message: "&dâ­ Milestone: $10M earned! Reward: &e$250,000"
+
+quests:
+  daily:
+    daily-sell-100:
+      display-name: "&eDaily Seller"
+      description: "&7Sell 100 items"
+      type: SELL_ITEMS
+      target: 100
+      reward: 500
+    daily-earn-1k:
+      display-name: "&eDaily Earner"
+      description: "&7Earn $1,000"
+      type: EARN_MONEY
+      target: 1000
+      reward: 300
+    daily-collect-5:
+      display-name: "&eDaily Collector"
+      description: "&7Collect money 5 times"
+      type: COLLECT
+      target: 5
+      reward: 200
+  weekly:
+    weekly-sell-1k:
+      display-name: "&6Weekly Seller"
+      description: "&7Sell 1,000 items"
+      type: SELL_ITEMS
+      target: 1000
+      reward: 5000
+    weekly-earn-50k:
+      display-name: "&6Weekly Earner"
+      description: "&7Earn $50,000"
+      type: EARN_MONEY
+      target: 50000
+      reward: 8000
+    weekly-prestige:
+      display-name: "&6Weekly Prestige"
+      description: "&7Prestige once"
+      type: PRESTIGE
+      target: 1
+      reward: 15000
+
+coop:
+  max-members: 2
+  vip-max-members: 5
+  members-can-collect: true
+
+vip:
+  money-multiplier: 2.0
+  auto-collect-free: true
+
+scoreboard:
+  enabled: true
+  title: "&6&lâš¡ MoneyTycoon âš¡"
+  update-interval: 20
+
+shop:
+  items:
+    lucky-token:
+      display-name: "&6Lucky Token"
+      description: "&7Guarantees double drop for 50 items"
+      material: GOLD_NUGGET
+      cost: 5000
+      type: LUCKY_TOKEN
+      value: 50
+      vip: false
+    instant-collect:
+      display-name: "&aInstant Collect"
+      description: "&7Instantly collects all your balance"
+      material: EMERALD
+      cost: 2000
+      type: INSTANT_COLLECT
+      vip: false
+    mystery-box:
+      display-name: "&d&lMystery Box"
+      description: "&7Random pet or $5K-$20K money!"
+      material: CHEST
+      cost: 15000
+      type: MYSTERY_BOX
+      vip: false
+    mega-booster:
+      display-name: "&c&l10x MEGA Booster"
+      description: "&710x multiplier for 30 seconds!"
+      material: NETHER_STAR
+      cost: 100000
+      type: BOOSTER
+      multiplier: 10.0
+      duration: 30
+      vip: false
+    vip-mega-box:
+      display-name: "&d&lVIP Mega Box"
+      description: "&7Guaranteed rare pet + $50K!"
+      material: ENDER_CHEST
+      cost: 50000
+      type: MYSTERY_BOX
+      vip: true
+
+trade:
+  enabled: true
+  cooldown: 30
+  max-money: 10000000
+  timeout: 120
+
+messages:
+  prefix: "&6[MoneyTycoon] &r"
+  tycoon-created: "&aYour tycoon has been created!"
+  tycoon-deleted: "&cYour tycoon has been deleted!"
+  tycoon-already-exists: "&cYou already have a tycoon!"
+  no-tycoon: "&cYou don't have a tycoon yet! Type &e/tycoon create"
+  not-enough-money: "&cNot enough money! Required: &e$%cost%"
+  upgrade-purchased: "&a%upgrade% &aupgrade purchased! (Level %level%)"
+  upgrade-max-level: "&cThis upgrade is already at max level!"
+  dropper-unlocked: "&a%dropper% &aunlocked!"
+  prestige-complete: "&6&lâœ¦ PRESTIGE! &eLevel %level% - Multiplier: %multiplier%x"
+  prestige-available: "&6&lâœ¦ Prestige Available! &eYou can prestige now! &7Cost: &a$%cost% &7- Use &e/tycoon prestige"
+  rebirth-available: "&d&lâœ¦ Rebirth Available! &eYou can rebirth now! &7Cost: &a$%cost% &7- Use &e/tycoon rebirth"
+  rebirth-complete: "&d&lâœ¦ REBIRTH! &eLevel %level% - Multiplier: %multiplier%x"
+  daily-bonus: "&a&lâœ¦ Daily Bonus! &eDay %day% - &a$%reward% &eadded to wallet!"
+  achievement-unlocked: "&6&lâ˜… Achievement! &e%name% &7- Reward: &a$%reward%"
+  visit-teleported: "&aTeleported to &e%player%&a's tycoon!"
+  no-permission: "&cYou don't have permission for this!"
+  vip-only: "&cThis feature is VIP only!"
+  reload-complete: "&aConfiguration reloaded!"
+  coop-invited: "&a%player% &ahas been invited to your tycoon!"
+  coop-joined: "&aYou joined &e%player%&a's tycoon!"
+  coop-kicked: "&c%player% &chas been kicked from your tycoon!"
+  coop-full: "&cYour co-op is full!"
+  quest-completed: "&a&lQuest Completed! &e%quest%"
+  quest-claimed: "&aReward claimed: &e$%reward%"
+  pet-purchased: "&a%pet% &apurchased!"
+  pet-activated: "&a%pet% &aactivated!"
+  theme-changed: "&aTheme changed to: &e%theme%"
+  booster-activated: "&a%booster% &aactivated for &e%duration%s&a!"
+  booster-expired: "&cYour booster has expired!"
+  settings-saved: "&aSettings updated!"
+
+daily-bonus:
+  enabled: true
+  rewards:
+    1: 500
+    2: 1000
+    3: 2000
+    4: 3500
+    5: 5000
+    6: 7500
+    7: 15000
+  max-streak: 7
+  reset-if-missed: true
+
+actionbar:
+  enabled: true
+  format: "&6Balance: &e$%balance% &7| &aWallet: &e$%wallet%"
+  update-interval: 20
+bossbar:
+  enabled: true
+  show-on-prestige-progress: true
+  format: "&6Prestige Progress: &e$%current% &7/ &a$%target%"
+
+purchasables:
+  obsidian-chest:
+    enabled: true
+    cost: 100000
+    description: "&7Chest becomes obsidian, money auto-collects"
+    effect: AUTO_COLLECT
+  golden-conveyor:
+    enabled: true
+    cost: 50000
+    description: "&7+20% conveyor speed permanently"
+    effect: CONVEYOR_BOOST
+    value: 0.2
+  value-boost:
+    enabled: true
+    cost: 75000
+    description: "&7+10% item value permanently"
+    effect: VALUE_BOOST
+    value: 0.1
+
+offline-earnings:
+  enabled: true
+  max-hours: 24
+  rate-per-hour: 0.05
+  min-interval-minutes: 5
+
+achievements:
+  first-1k:
+    display-name: "&eFirst Thousand"
+    description: "&7Earn $1,000 total"
+    reward: 500
+    condition: total_earned
+    target: 1000
+  first-100k:
+    display-name: "&6Hundred K"
+    description: "&7Earn $100,000 total"
+    reward: 5000
+    condition: total_earned
+    target: 100000
+  prestige-5:
+    display-name: "&dPrestige Master"
+    description: "&7Reach Prestige 5"
+    reward: 25000
+    condition: prestige
+    target: 5
+  rebirth-1:
+    display-name: "&5Reborn"
+    description: "&7Complete first Rebirth"
+    reward: 100000
+    condition: rebirth
+    target: 1
+
+logging:
+  enabled: true
+  log-prestige: true
+  log-rebirth: true
+  log-trades: true
+  log-admin-actions: true

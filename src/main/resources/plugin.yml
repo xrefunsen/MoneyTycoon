@@ -1,0 +1,34 @@
+name: MoneyTycoon
+version: ${project.version}
+main: dev.xdev.moneytycoon.MoneyTycoon
+api-version: '1.21'
+description: Roblox-style Tycoon game-mode for Minecraft
+authors: [xRefuns]
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+
+commands:
+  tycoon:
+    description: Main tycoon command
+    usage: /<command> [create|delete|menu|upgrades|collect|visit|tp|stats|prestige|rebirth|quest|pet|theme|settings|coop|booster|leaderboard|help]
+    aliases: [ty, factory]
+
+permissions:
+  moneytycoon.use:
+    description: Basic tycoon access
+    default: true
+  moneytycoon.create:
+    description: Create a tycoon
+    default: true
+  moneytycoon.delete:
+    description: Delete own tycoon
+    default: true
+  moneytycoon.visit:
+    description: Visit other tycoons
+    default: true
+  moneytycoon.vip:
+    description: VIP privileges
+    default: false
+  moneytycoon.admin:
+    description: Admin commands
+    default: op
