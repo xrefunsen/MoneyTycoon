@@ -3,7 +3,7 @@ version: ${project.version}
 main: dev.xdev.moneytycoon.MoneyTycoon
 api-version: '1.21'
 description: Roblox-style Tycoon game-mode for Minecraft
-authors: [xRefuns]
+authors: [xRefunsen]
 depend: [Vault]
 softdepend: [PlaceholderAPI]
 
